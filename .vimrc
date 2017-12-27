@@ -34,7 +34,6 @@ map <leader>n :NERDTreeToggle<CR>
 map <D-e> :CtrlP<CR>
 map <leader>. :ClearCtrlPCache<CR>
 map <leader>+ :!npm publish<CR>
-map <leader>l :JSHint<CR>
 map <leader>s2 :set softtabstop=2 <Bar> set shiftwidth=2<cr>
 map <leader>s4 :set softtabstop=4 <Bar> set shiftwidth=4<cr>
 map <leader>s6 :set softtabstop=6 <Bar> set shiftwidth=6<cr>
@@ -84,6 +83,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers=['eslint']
 
 " Open web browser
 :nnoremap <leader>o :!open %<CR>
