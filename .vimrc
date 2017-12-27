@@ -19,17 +19,15 @@ execute pathogen#infect()
 " Assign leader key
 let mapleader=","
 
-" Fonts
+" Fonts & colorscheme
 set guifont=Menlo\ Regular:h16
+colorscheme summerfruit256
 
 " Show line numbers
 set number
 
 " Disable backup
 :set nobackup
-
-" Set colorscheme
-let g:colors_name="morning"
 
 " Leader key mappings
 map <leader>n :NERDTreeToggle<CR>
