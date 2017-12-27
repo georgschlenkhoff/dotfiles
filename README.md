@@ -13,12 +13,16 @@ Just execute the following commands:
 ```
 # Add config alias to control the git repository
 echo "alias config='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
+
 # Ignore the folder where you'll clone it, so that you don't create weird recursion problems
 echo ".dotfiles/" >> .gitignore
+
 # Now clone dotfiles in bare repository
 git clone --bare https://github.com/georgschlenkhoff/dotfiles $HOME/.dotfiles
+
 # Check out the content in the bare repository, remove dotfiles if error comes up
 config checkout
+
 # Set the flag showUntrackedFiles to no on this specific local repository:
 config config --local status.showUntrackedFiles no
 ```
