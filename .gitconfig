@@ -1,0 +1,31 @@
+[user]
+    name = georgschlenkhoff
+    email = georg.schlenkhoff@gmail.com
+[core]
+    excludesfile = /Users/georgschlenkhoff/.gitignore
+[color]
+    ui = auto
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
+    lo = log
+    dc = diff --cached
+    am = commit --amend
+    aa = add --all
+    ff = merge --ff-only
+    pullff = pull --ff-only
+    noff = merge --no-ff
+    fa = fetch --all
+    pom = push origin master
+    phm = push heroku master
+    pog = push origin gh-pages
+    b = branch
+    ds = diff --stat=160,120
+    dh1 = diff HEAD~1
+    ra = log --pretty=format:"%h - %an, %ar : %s"
+[github]
+    user = georgschlenkhoff
+[credential]
+    helper = osxkeychain
