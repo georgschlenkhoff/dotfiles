@@ -39,7 +39,7 @@ map <leader>s4 :set softtabstop=4 <Bar> set shiftwidth=4<cr>
 map <leader>s6 :set softtabstop=6 <Bar> set shiftwidth=6<cr>
 map <leader>s8 :set softtabstop=8 <Bar> set shiftwidth=8<cr>
 map <leader><left> :b#<cr>
-map <leader><right> :bnext<cr>
+map <leader><right> :lnext<cr>
 map <leader>td :TernDoc<cr>
 map <leader>tb :TernDocBrowse<cr>
 map <leader>tt :TernType<cr>
@@ -74,16 +74,22 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " Show fugitive status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" Enable syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers=['eslint']
+" Asynchronous Lint Engine (ALE)
+" Limit linters used for JavaScript.
+let g:ale_linters = {
+\  'javascript': ['eslint', 'flow']
+\}
+highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
+highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
+let g:ale_sign_error = 'X' " could use emoji
+let g:ale_sign_warning = '?' " could use emoji
+let g:ale_statusline_format = ['X %d', '? %d', '']
+" %linter% is the name of the linter that provided the message
+" %s is the error or warning message
+let g:ale_echo_msg_format = '%linter% says %s'
+" Map keys to navigate between lines with errors and warnings.
+nnoremap <leader>an :ALENextWrap<cr>
+nnoremap <leader>ap :ALEPreviousWrap<cr>
 
 " Open web browser
 :nnoremap <leader>o :!open %<CR>
