@@ -1,17 +1,9 @@
 "Set indent method
-filetype plugin indent on
-set autoindent
-set expandtab
 set softtabstop=2
 set shiftwidth=2
 
-" Enable syntax higlighting
-syntax on
-filetype on
-au BufNewFile,BufRead *.md set filetype=markdown
-
-" Color Scheme, Filefomats
-set fileformats=unix,mac,dos
+"Set language
+:language en_GB.ISO8859-15
 
 " Use pathogen
 execute pathogen#infect()
@@ -20,7 +12,6 @@ execute pathogen#infect()
 let mapleader=","
 
 " Fonts & colorscheme
-set guifont=Menlo\ Regular:h16
 colorscheme summerfruit256
 
 " Show line numbers
@@ -31,7 +22,7 @@ set number
 
 " Leader key mappings
 map <leader>n :NERDTreeToggle<CR>
-map <D-e> :CtrlP<CR>
+map € :CtrlP<CR>
 map <leader>. :ClearCtrlPCache<CR>
 map <leader>+ :!npm publish<CR>
 map <leader>s2 :set softtabstop=2 <Bar> set shiftwidth=2<cr>
@@ -40,6 +31,7 @@ map <leader>s6 :set softtabstop=6 <Bar> set shiftwidth=6<cr>
 map <leader>s8 :set softtabstop=8 <Bar> set shiftwidth=8<cr>
 map <leader><left> :b#<cr>
 map <leader><right> :lnext<cr>
+map <leader>te :terminal<cr>
 map <leader>td :TernDoc<cr>
 map <leader>tb :TernDocBrowse<cr>
 map <leader>tt :TernType<cr>
@@ -85,8 +77,6 @@ highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
 let g:ale_sign_error = 'X' " could use emoji
 let g:ale_sign_warning = '?' " could use emoji
 let g:ale_statusline_format = ['X %d', '? %d', '']
-" %linter% is the name of the linter that provided the message
-" %s is the error or warning message
 let g:ale_echo_msg_format = '%linter% says %s'
 " Map keys to navigate between lines with errors and warnings.
 nnoremap <leader>an :ALENextWrap<cr>
@@ -98,3 +88,7 @@ nnoremap <leader>ap :ALEPreviousWrap<cr>
 " Enable vim-javascript features
 let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
+
+" Enable Python nvim support
+let g:python_host_prog  = '/usr/bin/python'
+let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.4/bin/python3'
