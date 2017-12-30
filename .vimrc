@@ -73,6 +73,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Show fugitive status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set diffopt+=vertical
 
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
