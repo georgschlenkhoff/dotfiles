@@ -32,6 +32,7 @@ map <leader>s8 :set softtabstop=8 <Bar> set shiftwidth=8<cr>
 map <leader><left> :b#<cr>
 map <leader><right> :lnext<cr>
 map <leader>te :terminal<cr>
+:tnoremap <Esc> <C-\><C-n>
 map <leader>td :TernDoc<cr>
 map <leader>tb :TernDocBrowse<cr>
 map <leader>tt :TernType<cr>
