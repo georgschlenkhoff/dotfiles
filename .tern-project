@@ -1,0 +1,13 @@
+{
+  "libs": [
+    "browser",
+    "node",
+    "chai"
+  ],
+  "plugins": {
+    "webpack": {
+      "configPath": "./lib/webpack.prod.js"
+    }
+  }
+}
+
