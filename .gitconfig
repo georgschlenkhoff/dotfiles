@@ -3,6 +3,7 @@
     email = georg.schlenkhoff@gmail.com
 [core]
     excludesfile = /Users/georgschlenkhoff/.gitignore
+    editor = 'nvim'
 [color]
     ui = auto
 [alias]
