@@ -51,6 +51,11 @@ nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
 let g:tern_map_keys=1
 let g:tern_show_signature_in_pum=1
 
+" Enable deoplete
+let g:deoplete#enable_at_startup = 1
+" Hide preview window after completion
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
 " JsDoc configuration
 let g:jsdoc_additional_descriptions=1
 let g:jsdoc_input_description=1
