@@ -44,6 +44,8 @@ nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
 :nnoremap <leader>gappg :!git commit --amend && git push origin gh-pages --force<cr>
 :nnoremap <leader>gpom :!git push origin master<cr>
 :nnoremap <leader>b :buffers<CR>:buffer<Space>
+" Switch to visual mode in :terminal
+:tnoremap <Esc> <C-\><C-n>
 
 " Enable tern keyboard shortcuts
 let g:tern_map_keys=1
@@ -59,6 +61,7 @@ let tern_map_prefix=","
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_show_hidden = 1
 
 " Open Marked
 :nnoremap <leader>m :silent !open -a /Applications/Marked\ 2.app '%:p'<cr>
@@ -69,9 +72,7 @@ set diffopt+=vertical
 
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
-let g:ale_linters = {
-\  'javascript': ['eslint', 'flow']
-\}
+let g:ale_linters = { 'javascript': ['eslint', 'flow'] }
 highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
 let g:ale_sign_error = 'X' " could use emoji
