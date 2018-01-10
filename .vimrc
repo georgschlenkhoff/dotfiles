@@ -24,6 +24,8 @@ set number
 map <leader>n :NERDTreeToggle<CR>
 map € :CtrlP<CR>
 map <leader>. :ClearCtrlPCache<CR>
+map å :w<CR>
+map « :bw<CR>
 map <leader>+ :!npm publish<CR>
 map <leader>s2 :set softtabstop=2 <Bar> set shiftwidth=2<cr>
 map <leader>s4 :set softtabstop=4 <Bar> set shiftwidth=4<cr>
