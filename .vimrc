@@ -1,6 +1,7 @@
 "Set indent method
 set softtabstop=2
 set shiftwidth=2
+set tabstop=2 expandtab
 
 "Set language
 :language en_GB.ISO8859-15
