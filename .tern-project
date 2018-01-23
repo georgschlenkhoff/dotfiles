@@ -13,9 +13,6 @@
     "doc_comment": {
       "fullDocs": true,
       "strong": true
-    },
-    "webpack": {
-      "configPath": "./lib/webpack.prod.js"
     }
   }
 }

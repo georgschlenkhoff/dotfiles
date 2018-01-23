@@ -13,7 +13,8 @@ execute pathogen#infect()
 let mapleader=","
 
 " Fonts & colorscheme
-colorscheme summerfruit256
+" colorscheme summerfruit256
+colorscheme southernlights
 
 " Show line numbers
 set number
@@ -53,6 +54,7 @@ nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
 " Enable tern keyboard shortcuts
 let g:tern_map_keys=1
 let g:tern_show_signature_in_pum=1
+let g:tern_show_argument_hints="on_hold"
 
 " Enable deoplete with tern_for_vim
 let g:deoplete#enable_at_startup = 1
