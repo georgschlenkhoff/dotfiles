@@ -29,9 +29,18 @@ map <leader>cc :set cc=80<cr>
 :nnoremap <leader>gpom :!git push origin master<cr>
 map <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
 map <leader>v :vs ~/.config/nvim/init.vim<CR>
-map å :w<CR>
+map <Esc><Esc> :w<CR>
 " Switch modes in terminal
 :tnoremap <Esc> <C-\><C-n>
+" Close bracket
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
 
 
 call plug#begin('~/.vim/plugged')
@@ -47,11 +56,15 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 Plug 'Valloric/YouCompleteMe'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 call plug#end()
 
+language en_US
 colorscheme OceanicNext
 set shiftwidth=2
 set tabstop=2 expandtab
@@ -65,6 +78,12 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 let g:ctrlp_show_hidden = 1
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
-let g:python_host_prog='/usr/local/bin/python'
-let g:python3_host_prog='/usr/local/bin/python3'
+let g:python_host_prog='/usr/bin/python'
+let g:python3_host_prog='/Library/Frameworks/Python.framework/Versions/3.4/bin/python3'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" Vim Prettier
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'none'
+let g:prettier#autoformat = 0
+autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
