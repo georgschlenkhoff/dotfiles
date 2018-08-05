@@ -43,7 +43,10 @@ inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
-
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap ((     (
+inoremap ()     ()
 
 call plug#begin('~/.vim/plugged')
 Plug 'mileszs/ack.vim'
