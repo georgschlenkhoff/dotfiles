@@ -1,4 +1,6 @@
 let mapleader=","
+" Filetype indent
+:set autoindent
 " CtrlP
 map <leader>m :CtrlP<CR>
 map <leader>. :ClearCtrlPCache<CR>
@@ -78,8 +80,8 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 let g:ctrlp_show_hidden = 1
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
-let g:python_host_prog='/usr/bin/python'
-let g:python3_host_prog='/Library/Frameworks/Python.framework/Versions/3.4/bin/python3'
+let g:python_host_prog='/usr/local/bin/python2'
+let g:python3_host_prog='/usr/local/bin/python3'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Vim Prettier
