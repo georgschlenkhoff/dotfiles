@@ -34,6 +34,7 @@ map <leader>v :vs ~/.config/nvim/init.vim<CR>
 map <Esc><Esc> :w<CR>
 " Switch modes in terminal
 :tnoremap <Esc> <C-\><C-n>
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 " Close bracket
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
@@ -47,6 +48,14 @@ inoremap (      ()<Left>
 inoremap (<CR>  (<CR>)<Esc>O
 inoremap ((     (
 inoremap ()     ()
+inoremap "      ""<Left>
+inoremap "<CR>  "<CR>"<Esc>O
+inoremap ""     "
+inoremap ""     ""
+inoremap '      ''<Left>
+inoremap '<CR>  '<CR>'<Esc>O
+inoremap ''     '
+inoremap ''     ''
 
 call plug#begin('~/.vim/plugged')
 Plug 'mileszs/ack.vim'
@@ -55,6 +64,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
+Plug 'chrisbra/NrrwRgn'
 Plug 'vim-airline/vim-airline'
 Plug 'mhartington/oceanic-next'
 Plug 'majutsushi/tagbar'
@@ -92,3 +102,6 @@ let g:prettier#config#single_quote = 'true'
 let g:prettier#config#trailing_comma = 'none'
 let g:prettier#autoformat = 0
 autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
+" Prettier
+let g:prettier#quickfix_auto_focus = 0
