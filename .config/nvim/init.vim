@@ -71,6 +71,7 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
@@ -78,7 +79,6 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 call plug#end()
-
 language en_US
 colorscheme OceanicNext
 set shiftwidth=2
@@ -105,3 +105,13 @@ autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.
 
 " Prettier
 let g:prettier#quickfix_auto_focus = 0
+
+" Emmet-vim
+let g:user_emmet_settings = {
+\  'javascript' : {
+\      'extends' : 'jsx',
+\  },
+\}
+
+" CtrlP
+set wildignore+=*/.next/*
