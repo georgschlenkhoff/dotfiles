@@ -1,6 +1,7 @@
 let mapleader=","
 " Filetype indent
 :set autoindent
+:set number
 " CtrlP
 map <leader>m :CtrlP<CR>
 map <leader>. :ClearCtrlPCache<CR>
@@ -79,7 +80,6 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 call plug#end()
-language en_US
 colorscheme OceanicNext
 set shiftwidth=2
 set tabstop=2 expandtab
@@ -93,9 +93,12 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 let g:ctrlp_show_hidden = 1
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
-let g:python_host_prog='/usr/local/bin/python2'
-let g:python3_host_prog='/usr/local/bin/python3'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:python_host_prog='/usr/bin/python2'
+let g:python3_host_prog='/usr/bin/python3'
+set wildignore+=*/dist/*,*/node_modules/*,*/_next/*
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|c9|sass-cache)$'
+  \ }
 
 " Vim Prettier
 let g:prettier#config#single_quote = 'true'
